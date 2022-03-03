@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; // Para trabajar con [ngModule] y  formularios
+import { HttpClientModule } from '@angular/common/http'; // Para trabajar peticiones HTTP APIs
+import { SwiperModule } from 'swiper/angular'; // Para crear slides
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SwiperModule,
     FormsModule
   ],
   providers: [],

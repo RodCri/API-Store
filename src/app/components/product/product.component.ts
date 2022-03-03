@@ -9,20 +9,31 @@ import { Product } from '../../models/product.model';
 })
 export class ProductComponent {
 
+  // Para comunicar al hijo
   @Input() product: Product = {
     id: '',
     price: 0,
-    image: '',
+    images: [],
     title: '',
-    category: '',
+    category: {
+      id: '',
+      name: ''
+    },
     description: ''
   };
+  // Para comunicar al padre Output
   @Output() addedProduct = new EventEmitter<Product>();
+  @Output() showProduct = new EventEmitter<string>();
+
 
   constructor() { }
 
   onAddToCart() {
     this.addedProduct.emit(this.product);
+  }
+
+  onShowDetail(){
+    this.showProduct.emit(this.product.id);
   }
 
 }
